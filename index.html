@@ -55,46 +55,50 @@
       </div>
     </header>
     <section class="products">
-      <div class="products__card--slided">
-        <div class="products__card--slided-product-area">
-          <div class="galery"></div>
-          <div class="image"></div>
-          <div class="slider-dots">
-            <div class="dot1"></div>
-            <div class="dot2"></div>
-            <div class="dot3"></div>
+      <div class="products__card slided">
+        <div class="products__card--product-area">
+          <div class="galery">
+              <img src="./img/converse-blue-front.jpg" alt="converse front" class="galery__image-1">
+              <img src="./img/converse-blue-side.jpg" alt="converse side" class="galery__image-2">
+              <img src="./img/converse-blue-back.jpg" alt="converse back" class="galery__image-3">
+          </div>
+          <div class="image-area">
+                <img src="img/converse-blue-front.jpg" alt="Very cool men's converse">
+                <div class="slider-dots">
+                    <div class="dot dot1"></div>
+                    <div class="dot dot2"></div>
+                    <div class="dot dot3"></div>
+                </div>
           </div>
         </div>
         <div class="products__card--name-area">
-          <span class="name" id="name">Very cool converse</span>
-          <div class="price">
-            <p class="price__discounted">2150p.</p>
-            <div class="price__undiscounted">
+          <div class="products__card--name-area--prodName" id="name"><p>Very cool men's converse</p></div>
+            <div class="products__card--name-area--price">
                 <span id="price">485</span>
                 <p>p.</p>
-            </div>
         </div>
         </div>
         <div class="products__card--slided-button-area">
-          <button
+          <a
             type="button"
             class="buying__button"
             id="startAdding"
-          ></button>
-          <div class="buying__setup">
-            <div class="buying__setup--trash" id="deleteItem"></div>
-            <div class="buying__setup--spinner"></div>
+            href="#buyingSetup"
+          ><p href="#buyingSetup">Начать оформление</p></a>
+          <div class="buying__setup" id="buyingSetup">
+            <div class="buying__setup--trash" id="deleteItem"><i class="fas fa-trash"></i></div>
+            <div class="buying__setup--spinner" id="spin"><i class="fas fa-sync-alt"></i></div>
             <div class="buying__setup--quantity">
               <span id="quantityOfProduct">1</span>
               <p>шт.</p>
             </div>
-            <div class="buying__setup--plus" id="addProduct"></div>
+            <div class="buying__setup--plus" id="addProduct"><i class="fas fa-plus"></i></div>
             <div class="buying__setup--complete-button"><p>Оформить</p></div>
           </div>
         </div>
       </div>
-      <div class="products__card--discounted">
-        <div class="products__card--slided-product-area">
+      <div class="products__card discounted">
+        <div class="products__card--product-area">
             <div class="galery"></div>
             <div class="image"></div>
             <div class="slider-dots">
@@ -118,9 +122,10 @@
               type="button"
               class="buying__button"
               id="startAdding"
-            ></button>
+            >
+            </button>
             <div class="buying__setup">
-              <div class="buying__setup--trash" id="deleteItem"></div>
+              <div class="buying__setup--trash" id="deleteItem"><i class="fas fa-trash"></i></div>
               <div class="buying__setup--spinner"></div>
               <div class="buying__setup--quantity">
                 <span id="quantityOfProduct">1</span>

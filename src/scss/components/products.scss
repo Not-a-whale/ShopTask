@@ -1,0 +1,274 @@
+.products {
+    width: 80vw;
+    margin: 2rem auto;
+    display: grid;
+    grid-column-gap: 2rem;
+    grid-template-columns: repeat(4, max-content);
+    grid-auto-rows: max-content;
+
+    @include respond-phone(tab-land) {
+        width: 85vw;
+      }
+  
+      @include respond-phone(tab-port) {
+        width: 90vw;
+      }
+  
+      @include respond-phone(big-desktop) {
+        width: 60vw;
+      }
+
+      &__card {
+        border: 1px solid gainsboro;
+
+        &.slided {
+            .products__card--product-area {
+                display: grid;
+                grid-template-columns: min-content 1fr;
+
+                @include respond-phone(phone) {
+                    display: grid;
+                    grid-template-columns: none;
+                    grid-template-rows: max-content 1fr;
+                }
+
+                .galery {
+                    grid-column: 1 / 2;
+
+                    @include respond-phone(phone) {
+                        grid-row: 1 / 2;
+                      }
+                    img {
+                        height: 10rem;
+                        width: 10rem;
+                        margin: .5rem;
+                        border-radius: 5%;
+                        transition: .2s ease;
+                        cursor: pointer;
+
+                        &:hover {
+                            border: 2px solid blue;
+                        }
+                    }
+                }
+
+                .image-area {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    grid-column: 2 / -1;
+                    padding: 1rem;
+                    img {
+                        width: 22rem;
+                        height: 90%;
+
+                        @include respond-phone(phone) {
+                            width: 30rem;
+                          }
+                    }
+
+                    .slider-dots {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        width: 50%;
+                        margin: 0 auto; 
+                        height: 3rem;
+                        .dot {
+                            width: 2rem;
+                            height: 2rem;
+                            background-color: gainsboro;
+                            border-radius: 50%;
+                            transition: .4s ease;
+
+                            &:hover {
+                                cursor: pointer;
+                                background-color: mediumpurple;
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+            .products__card--name-area {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0 auto;
+                width: 90%;
+                padding: 2rem 0;
+                &--prodName {
+                    p {
+                        font-size: 2rem;
+                    }
+                }
+
+                &--price {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+            }
+
+            .products__card--slided-button-area {
+
+                position: relative;
+                padding: 2rem;
+                height: 7rem;
+                a {
+                    width: 90%;
+                    height: 80%;
+                    background-color: royalblue;
+                    top: 0;
+                    left: 5%;
+                    padding: .5rem; 
+                    position: absolute;
+                    border-radius: 5px;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                    transition: .4s ease;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    p {
+                        color: #fff;
+                        font-size: 1.6rem;
+
+                    }
+
+                    &:hover {
+                        background-color: cornflowerblue;
+                    }
+
+                    &:active {
+                        background-color: blue;
+                        transform: scale(0.98);
+                    }
+                }
+
+                .buying__setup {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: #fff;
+                    width: 90%;
+                    height: 80%;
+                    top: 0;
+                    left: 5%;
+                    border-radius: 5px;
+                    padding: .5rem 2rem; 
+                    font-size: 1.6rem;
+                    border: 1px solid gainsboro;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: .4s ease;
+                    &:target {
+                        opacity: 1;
+                        visibility: visible;
+
+                        .buying__setup--spinner {
+                            svg {
+                                animation-name: spin;
+                                animation-duration: 1000ms;
+                                animation-iteration-count: 3;
+                                animation-timing-function: linear;
+                            }
+
+                            opacity: 0;
+                            visibility: hidden;
+                        }
+
+                        .buying__setup--quantity {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+
+                    &--trash {
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    &--spinner {
+                        position: absolute;
+                        z-index: 111;
+                        top: 30%;
+                        left: 17%;
+                        background-color: #fff;
+                        opacity: 1;
+                        visibility: visible;
+                        transition: all .4s ease 3s;
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        &:target {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+
+                    &--plus {
+                        position: absolute;
+                        top: 30%;
+                        left: 27%;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                        
+                    }
+
+                    &--quantity {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        position: absolute;
+                        z-index: 6;
+                        top: 30%;
+                        left: 15%;
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: all .4s ease 3s;
+                    }
+
+                    &--complete-button {
+                        border: 1px solid gainsboro;
+                        padding: 1rem;
+                        transition: .4s ease;
+                        &:hover {
+                            cursor: pointer;
+                            border: 1px solid black;
+                        }
+                        &:active {
+                            background-color: black;
+                            color: #fff;
+                        }
+                    }
+                    
+                }
+
+            }
+        }
+      }
+
+
+
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
