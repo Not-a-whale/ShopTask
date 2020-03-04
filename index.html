@@ -1,15 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Top Shop</title>
-    <link rel='stylesheet' href='dist/style.css'>
-    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-</head>
-<body>
-    
-
+    <link rel="stylesheet" href="dist/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrapper">
+        <section class="right">
+          <div class="header__logo"><a href="#">DreamJob</a></div>
+        </section>
+        <section class="left">
+          <div class="header__searchBar">
+            <div href="#" class="header__searchBar--search-icon">
+              <i class="fas fa-search  fa-2x"> </i>
+            </div>
+            <input
+              type="text"
+              class="header__searchBar--search-text"
+              placeholder="Search here"
+            />
+          </div>
+          <div class="header__basket">
+            <div class="header__basket--sketch">
+              <div class="sketch">
+                <i class="fas fa-shopping-bag fa-2x"></i
+                ><span class="sketch-number"><p id="numberOfItems"></p></span>
+              </div>
+              <div class="sketch-content">
+                <span id="price">0</span>
+                <p id="sketch-content">p</p>
+              </div>
+            </div>
+          </div>
+          <div class="header__language">
+            <select
+              name="language"
+              id="selectLanguage"
+              class="header__language--dropdown"
+            >
+              <option value="En">en</option>
+              <option value="Ru">ru</option>
+              <option value="spa">spa</option>
+            </select>
+            <div class="arrow"></div>
+          </div>
+        </section>
+      </div>
+    </header>
+    <section class="products">
+      <div class="products__card--slided">
+        <div class="products__card--slided-product-area">
+          <div class="galery"></div>
+          <div class="image"></div>
+          <div class="slider-dots">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+            <div class="dot3"></div>
+          </div>
+        </div>
+        <div class="products__card--name-area">
+          <span class="name" id="name">Very cool converse</span>
+          <div class="price">
+            <p class="price__discounted">2150p.</p>
+            <div class="price__undiscounted">
+                <span id="price">485</span>
+                <p>p.</p>
+            </div>
+        </div>
+        </div>
+        <div class="products__card--slided-button-area">
+          <button
+            type="button"
+            class="buying__button"
+            id="startAdding"
+          ></button>
+          <div class="buying__setup">
+            <div class="buying__setup--trash" id="deleteItem"></div>
+            <div class="buying__setup--spinner"></div>
+            <div class="buying__setup--quantity">
+              <span id="quantityOfProduct">1</span>
+              <p>шт.</p>
+            </div>
+            <div class="buying__setup--plus" id="addProduct"></div>
+            <div class="buying__setup--complete-button"><p>Оформить</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="products__card--discounted">
+        <div class="products__card--slided-product-area">
+            <div class="galery"></div>
+            <div class="image"></div>
+            <div class="slider-dots">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+                <div class="dot3"></div>
+            </div>
+          </div>
+          <div class="products__card--name-area">
+            <span class="name" id="name">Vans for women very comfy and beautiful</span>
+            <div class="price">
+                <p class="price__discounted">2150p.</p>
+                <div class="price__undiscounted">
+                    <span id="price">485</span>
+                    <p>p.</p>
+                </div>
+            </div>
+          </div>
+          <div class="products__card--slided-button-area">
+            <button
+              type="button"
+              class="buying__button"
+              id="startAdding"
+            ></button>
+            <div class="buying__setup">
+              <div class="buying__setup--trash" id="deleteItem"></div>
+              <div class="buying__setup--spinner"></div>
+              <div class="buying__setup--quantity">
+                <span id="quantityOfProduct">1</span>
+                <p>шт.</p>
+              </div>
+              <div class="buying__setup--plus" id="addProduct"></div>
+              <div class="buying__setup--complete-button"><p>Оформить</p></div>
+            </div>
+          </div>
+      </div>
+    </section>
     <script type="text/javascript" src="dist/bundle.js"></script>
-</body>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+    ></script>
+  </body>
 </html>
